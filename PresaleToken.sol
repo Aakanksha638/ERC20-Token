@@ -45,7 +45,7 @@ interface ITokenSale {
 contract TokenSale is ITokenSale {
     using SafeMath for uint256;
 
-    ITokenSale public INV = ITokenSale(0x4998bd8ec0075FCd22F418724f38B60f739C505c); //Contract Address
+    ITokenSale public INV = ITokenSale(); //Contract Address
     AggregatorV3Interface public priceFeedEth;
 
     address payable public owner;
@@ -88,7 +88,7 @@ contract TokenSale is ITokenSale {
     event BuyToken(address indexed _user, uint256 indexed _amount);
 
     constructor() {
-      owner = payable(0x5C62bEb9A7e6cC4B9A46B58e79ab90dC482f0260);
+      owner = payable();
       priceFeedEth = AggregatorV3Interface(
           0xEe9F2375b4bdF6387aa8265dD4FB8F16512A1d46
       ); // Aggregrator address
